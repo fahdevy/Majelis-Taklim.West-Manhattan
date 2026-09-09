@@ -91,6 +91,29 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
   @media (max-width:640px){ .wrap{padding:0 18px;} }
 
+  /* ---------- treasury bar ---------- */
+  .treasury-bar{background:#0B2A22;position:relative;overflow:hidden;}
+  .treasury-bar::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(circle at 1px 1px, #FFFFFF 1px, transparent 1.6px);
+    background-size:22px 22px;opacity:.045;
+  }
+  .treasury-inner{
+    position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    padding:13px 28px;
+  }
+  @media (max-width:640px){ .treasury-inner{padding:12px 18px;} }
+  .treasury-icon{width:30px;height:30px;flex:none;border-radius:8px;background:rgba(201,162,39,.16);display:flex;align-items:center;justify-content:center;}
+  .treasury-icon svg{width:16px;height:16px;color:#C9A227;}
+  .treasury-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8FA79A;white-space:nowrap;}
+  .treasury-amount{font-family:var(--font-mono);font-weight:600;font-size:1.28rem;color:#F2F6F1;letter-spacing:-.01em;white-space:nowrap;}
+  .treasury-sep{width:1px;height:20px;background:rgba(233,241,234,.18);flex:none;}
+  @media (max-width:760px){ .treasury-sep{display:none;} }
+  .treasury-breakdown{font-size:.78rem;color:#BFD1C4;line-height:1.5;}
+  .treasury-breakdown b{color:#F2F6F1;font-weight:600;}
+  .treasury-note{font-size:.68rem;color:#7C9686;margin-left:auto;white-space:nowrap;}
+  @media (max-width:760px){ .treasury-note{margin-left:0;} }
+
   /* ---------- topbar ---------- */
   .topbar{
     position:sticky;top:0;z-index:40;
@@ -374,6 +397,19 @@
 
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 </style>
+
+<div class="treasury-bar">
+  <div class="wrap treasury-inner">
+    <span class="treasury-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><circle cx="12" cy="13.5" r="2.3"/></svg>
+    </span>
+    <span class="treasury-label">Total Kas Majelis Saat Ini</span>
+    <span class="treasury-amount tabular">Rp 6.698.410</span>
+    <span class="treasury-sep"></span>
+    <span class="treasury-breakdown">Sisa kas LPJ Qurban 2026: <b>Rp 3.748.410</b> &nbsp;+&nbsp; Infaq Maulid Nabi 2026 (berjalan): <b>Rp 2.950.000</b></span>
+    <span class="treasury-note">per laporan terakhir tiap kegiatan</span>
+  </div>
+</div>
 
 <header class="topbar">
   <div class="topbar-inner">
